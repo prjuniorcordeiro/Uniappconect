@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/prjun/Downloads/index_10.html -->
+<!-- saved from url=(0046)file:///C:/Users/prjun/Downloads/index_12.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -406,10 +406,9 @@ tbody td{padding:9px 12px;vertical-align:middle}
 </style>
 </head>
 <body>
-<div id="app" style="display:none;width:100%;height:100%">
 
 <!-- LOGIN SCREEN -->
-<div id="loginScreen" style="display:flex;position:fixed;inset:0;background:var(--cream);z-index:9999;flex-direction:column;align-items:center;justify-content:center;gap:0">
+<div id="loginScreen" style="display: flex; position: fixed; inset: 0px; background: var(--cream); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; gap: 0px;">
   <div style="width:100%;max-width:380px;padding:24px">
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:32px">
@@ -441,6 +440,8 @@ tbody td{padding:9px 12px;vertical-align:middle}
   </div>
 </div>
 
+<div id="app" style="display: none; width: 100%; height: 100%;">
+
 <!-- SIDEBAR -->
 <aside id="sb">
   <div class="sb-head">
@@ -453,9 +454,33 @@ tbody td{padding:9px 12px;vertical-align:middle}
     <div class="sb-unit-type" id="sbUnitType">Admin Geral</div>
     <div class="sb-unit-name" id="sbUnitName">Todas as Igrejas</div>
   </div>
-  <nav class="sb-nav" id="sbNav"></nav>
+  <nav class="sb-nav" id="sbNav"><div class="nav-item active" onclick="showPage(&#39;dashboard&#39;)">
+      <span class="ni">📊</span><span>Dashboard</span>
+    </div><div class="nav-sec">Estrutura</div><div class="nav-item" onclick="showPage(&#39;igrejas&#39;)">
+      <span class="ni">🏛</span><span>Igrejas</span><span class="nb">4</span>
+    </div><div class="nav-item" onclick="showPage(&#39;grupos&#39;)">
+      <span class="ni">🏘</span><span>Grupos</span><span class="nb">6</span>
+    </div><div class="nav-sec">Pessoas</div><div class="nav-item" onclick="showPage(&#39;membros&#39;)">
+      <span class="ni">👥</span><span>Membros</span><span class="nb">4</span>
+    </div><div class="nav-sec">Agenda</div><div class="nav-item" onclick="showPage(&#39;reunioes&#39;)">
+      <span class="ni">📅</span><span>Reuniões &amp; Escalas</span>
+    </div><div class="nav-item" onclick="showPage(&#39;relatorios&#39;)">
+      <span class="ni">📊</span><span>Relatórios</span>
+    </div><div class="nav-sec">Gestão</div><div class="nav-item" onclick="showPage(&#39;almoxarifado&#39;)">
+      <span class="ni">📦</span><span>Almoxarifado</span>
+    </div><div class="nav-item" onclick="showPage(&#39;patrimonio&#39;)">
+      <span class="ni">🏷</span><span>Patrimônio</span>
+    </div><div class="nav-item" onclick="showPage(&#39;financeiro&#39;)">
+      <span class="ni">💰</span><span>Financeiro</span>
+    </div><div class="nav-sec">Comunidade</div><div class="nav-item" onclick="showPage(&#39;comunicacao&#39;)">
+      <span class="ni">📢</span><span>Comunicação</span>
+    </div><div class="nav-item" onclick="showPage(&#39;visitantes&#39;)">
+      <span class="ni">🤝</span><span>Atendimentos</span>
+    </div><div class="nav-sec">Sistema</div><div class="nav-item" onclick="showPage(&#39;backup&#39;)">
+      <span class="ni">💾</span><span>Backup &amp; Dados</span>
+    </div></nav>
   <div class="sb-bottom">
-    <div id="syncStatus" style="font-size:.65rem;text-align:center;padding:4px 8px;color:var(--muted);letter-spacing:.03em">⟳ Conectando…</div>
+    <div id="syncStatus" style="font-size: 0.65rem; text-align: center; padding: 4px 8px; color: rgb(22, 163, 74); letter-spacing: 0.03em;">☁️ Sincronizado</div>
     <button class="sb-btn gold" onclick="openMemberModal()">＋ Novo Membro</button>
     <button class="sb-btn ghost" onclick="showPage(&#39;backup&#39;)">💾 Backup</button>
     <button class="sb-btn ghost" onclick="fazerLogout()" style="color:#f87171;border-color:rgba(248,113,113,.3)">🚪 Sair</button>
@@ -469,7 +494,72 @@ tbody td{padding:9px 12px;vertical-align:middle}
     <h2 id="pageTitle">Dashboard</h2>
     <div class="tb-actions" id="tbActions"></div>
   </div>
-  <div id="content"></div>
+  <div id="content">
+    <div class="dash-welcome">
+      <h3>Bem-vindo ao EcclésIA</h3>
+      <p>Sistema de gestão eclesiástica integral — Igrejas · Grupos · Membros · Reuniões · Almoxarifado · Patrimônio · Financeiro · Comunicação · Visitantes</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card" onclick="showPage(&#39;igrejas&#39;)" style="cursor:pointer"><span class="si">🏛</span><div class="sn">4</div><div class="sl">Unidades</div></div>
+      <div class="stat-card" onclick="showPage(&#39;membros&#39;)" style="cursor:pointer"><span class="si">👥</span><div class="sn">4</div><div class="sl">Membros</div></div>
+      <div class="stat-card" onclick="showPage(&#39;membros&#39;)" style="cursor:pointer"><span class="si">✅</span><div class="sn">4</div><div class="sl">Ativos</div></div>
+      <div class="stat-card" onclick="showPage(&#39;reunioes&#39;)" style="cursor:pointer"><span class="si">📅</span><div class="sn">0</div><div class="sl">Reuniões</div></div>
+      <div class="stat-card" onclick="showPage(&#39;grupos&#39;)" style="cursor:pointer"><span class="si">🏘</span><div class="sn">6</div><div class="sl">Grupos</div></div>
+      <div class="stat-card" onclick="showPage(&#39;financeiro&#39;)" style="cursor:pointer"><span class="si">💰</span><div class="sn" style="font-size:1.2rem;color:#15803d">R$0</div><div class="sl">Saldo Caixa</div></div>
+      <div class="stat-card" onclick="showPage(&#39;comunicacao&#39;)" style="cursor:pointer"><span class="si">📢</span><div class="sn">0</div><div class="sl">Avisos Ativos</div></div>
+      <div class="stat-card" onclick="showPage(&#39;visitantes&#39;)" style="cursor:pointer"><span class="si">🚶</span><div class="sn">0</div><div class="sl">Vis. Novos</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="panel">
+        <div class="panel-head"><h3>Membros por Condição</h3></div>
+        <div class="panel-body">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+              <span class="tag tag-green">ATIVO</span>
+              <div style="flex:1;background:var(--border);border-radius:4px;height:6px;overflow:hidden">
+                <div style="width:100%;height:100%;background:var(--azure);border-radius:4px"></div>
+              </div>
+              <span style="font-size:.75rem;color:var(--muted);width:28px;text-align:right">4</span>
+            </div>
+          
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Unidades Recentes</h3></div>
+        <div class="panel-body">
+          
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">
+              <span class="tag tag-rose" style="font-size:.6rem">Núcleo</span>
+              <span style="font-size:.82rem;font-weight:500;flex:1">Núcleo Campestre</span>
+              <span style="font-size:.7rem;color:var(--muted)">Poços de Caldas</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">
+              <span class="tag tag-purple" style="font-size:.6rem">Igreja</span>
+              <span style="font-size:.82rem;font-weight:500;flex:1">Igreja Sede — Poços de Caldas</span>
+              <span style="font-size:.7rem;color:var(--muted)">Poços de Caldas</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">
+              <span class="tag tag-blue" style="font-size:.6rem">Sede Regional</span>
+              <span style="font-size:.82rem;font-weight:500;flex:1">Sede Regional Sul</span>
+              <span style="font-size:.7rem;color:var(--muted)">Campinas</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">
+              <span class="tag tag-amber" style="font-size:.6rem">Catedral</span>
+              <span style="font-size:.82rem;font-weight:500;flex:1">Catedral Central</span>
+              <span style="font-size:.7rem;color:var(--muted)">Poços de Caldas</span>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:14px">
+      <div class="panel-head">
+        <h3>📅 Próximas Reuniões</h3>
+        <button class="btn" onclick="showPage(&#39;reunioes&#39;)">Ver agenda →</button>
+      </div>
+      <div class="panel-body">
+        <div class="empty"><div class="ei">📅</div><p>Nenhuma reunião agendada nos próximos 60 dias</p></div>
+      </div>
+    </div></div>
 </div>
 </div>
 
